@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style type = "text/css">
+
+    div.dice {
+        float: left;
+        width: 32px;
+        height: 32px;
+        background: #F5F5F5;
+        border: #999 1px solid;
+        font-size: 24px;
+        text-align: center;
+        margin: 10px;
+        padding: 10px;
+
+    }
+
+    button {
+        margin-top: 42px;
+    }
+
+    .status {
+        clear: left;
+    }
+</style>
+
+</head>
+
+<body>
+
+    <div id = "dice1" class = "dice">0</div>
+
+    <div id = "dice2" class = "dice">0</div>
+
+    <button onclick = "rollDice()">Roll Dice</button>
+
+    <h2 id="status"></h2>
+
+<script type = "text/javascript">
+
+    function rollDice(){
+        var diceTotal;
+        var d1 = document.getElementById("dice1").innerHTML = Math.floor(Math.random() * 6) +1;
+        var d2 = document.getElementById("dice2").innerHTML = Math.floor(Math.random() * 6) +1;
+       diceTotal = d1 + d2;
+       document.getElementById("status").innerHTML = "You just rolled "+diceTotal+".";
+    }
+
+
+</script>
+</body>
+</html>
